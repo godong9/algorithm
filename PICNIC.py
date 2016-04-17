@@ -1,4 +1,4 @@
-#-*- coding: utf-8 -*-
+import sys
 
 def sanitizeAreFriends(tempMArray):
     areFriends = []
@@ -41,13 +41,18 @@ for testN in xrange(0, testCaseN):
     arr = map(int, raw_input().strip().split(' '))
     nArray.append(arr[0])
     mSize = int(arr[1])
-    mArr = map(int, raw_input().strip().split(' '))
+    mArr = []
+    if mSize > 0:
+        mArr = map(int, raw_input().strip().split(' '))
     mIdx = 0
     tempMArray = []
     for mArrayN in xrange(0, mSize):
         tempMArray.append([mArr[mIdx], mArr[mIdx + 1]])
         mIdx += 2
     mArray.append(tempMArray)
+
+#print nArray
+#print mArray
 
 for i in xrange(0, len(nArray)):
     n = nArray[i]
